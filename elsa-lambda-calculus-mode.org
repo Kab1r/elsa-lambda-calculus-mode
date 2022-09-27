@@ -23,7 +23,7 @@
 
 ;; Author: Kabir Kwatra <kabir@kwatra.me>
 ;; Keywords: languages, lambda, calculus, elsa
-;; License: agpl-3.0
+;; License: AGPL-3.0-only
 ;; Version: 1.0
 ;; URL: https://github.com/Kab1r/elsa-lambda-calculus-mode
 #+end_src
@@ -42,23 +42,23 @@
 #+end_src
 *** Regular Expressions
 #+begin_src emacs-lisp
-(setq elsa-keywords  '("let" "eval" ":" "\\"))
-(setq elsa-operators '("\=" "-\>"))
+(defconst elsa-lambda-calculus-keywords  '("let" "eval" ":" "\\"))
+(defconst elsa-lambda-calculus-operators '("\=" "-\>"))
 
-(setq elsa-keywords-regexp  (regexp-opt elsa-keywords))
-(setq elsa-comments-regexp  "--.*$")
-(setq elsa-step-regexp "=[abd*~]\>")
-(setq elsa-operators-regexp (regexp-opt elsa-operators))
-(setq elsa-variables-regexp "[a-z]?[0-9]*?_?[a-z]?[0-9]*")
-(setq elsa-constants-regexp "[A-Z0-9]+")
+(defconst elsa-lambda-calculus-keywords-regexp  (regexp-opt elsa-lambda-calculus-keywords))
+(defconst elsa-lambda-calculus-comments-regexp  "--.*$")
+(defconst elsa-lambda-calculus-step-regexp "=[abd*~]\>")
+(defconst elsa-lambda-calculus-operators-regexp (regexp-opt elsa-lambda-calculus-operators))
+(defconst elsa-lambda-calculus-variables-regexp "[a-z]+?[0-9]*?_?[a-z]?[0-9]*")
+(defconst elsa-lambda-calculus-constants-regexp "[A-Z0-9]+")
 
-(setq elsa-font-lock-keywords
-      `((,elsa-keywords-regexp  . font-lock-keyword-face)
-        (,elsa-comments-regexp  . font-lock-comment-face)
-        (,elsa-step-regexp      . font-lock-keyword-face)
-        (,elsa-variables-regexp . font-lock-variable-name-face)
-        (,elsa-constants-regexp . font-lock-constant-face)
-        (,elsa-operators-regexp . font-lock-keyword-face)))
+(defconst elsa-lambda-calculus-font-lock-keywords
+      `((,elsa-lambda-calculus-keywords-regexp  . font-lock-keyword-face)
+        (,elsa-lambda-calculus-comments-regexp  . font-lock-comment-face)
+        (,elsa-lambda-calculus-step-regexp      . font-lock-keyword-face)
+        (,elsa-lambda-calculus-variables-regexp . font-lock-variable-name-face)
+        (,elsa-lambda-calculus-constants-regexp . font-lock-constant-face)
+        (,elsa-lambda-calculus-operators-regexp . font-lock-keyword-face)))
 #+end_src
 
 *** Define Major Mode
@@ -69,16 +69,16 @@
   "Elsa"
   "Major Mode for the tiny lambda calculus evaluator."
 
-  (setq font-lock-defaults '((elsa-font-lock-keywords))))
+  (setq font-lock-defaults '((elsa-lambda-calculus-font-lock-keywords))))
 
 (provide 'elsa-lambda-calculus-mode)
 #+end_src
 
 *** Auto-load Major Mode for .lc Files
 #+begin_src emacs-lisp
+(provide 'elsa-lambda-calculus-mode)
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.lc\\'" . elsa-lambda-calculus-mode))
-
 #+end_src
 
 ** Footer
