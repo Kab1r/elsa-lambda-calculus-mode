@@ -2,6 +2,9 @@
 #+subtitle: Syntax highlighting for the lambda calculus evaluator
 #+property: header-args:emacs-lisp :tangle yes :cache yes :results silent :padline no
 
+** Overview
+This major-mode implements syntax highlighting for [[https://github.com/ucsd-progsys/elsa][Elsa]], a tiny lambda calculus language and evaluator.
+
 ** Header
 #+begin_src emacs-lisp
 ;;; elsa-lambda-calculus-mode.el --- Major Mode for Elsa
