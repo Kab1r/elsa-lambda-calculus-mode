@@ -36,8 +36,8 @@
 (defconst elsa-lambda-calculus-constants-regexp "[A-Z0-9]+")
 
 (defconst elsa-lambda-calculus-font-lock-keywords
-      `((,elsa-lambda-calculus-keywords-regexp  . font-lock-keyword-face)
-        (,elsa-lambda-calculus-comments-regexp  . font-lock-comment-face)
+      `((,elsa-lambda-calculus-comments-regexp  . font-lock-comment-face)
+        (,elsa-lambda-calculus-keywords-regexp  . font-lock-keyword-face)
         (,elsa-lambda-calculus-step-regexp      . font-lock-keyword-face)
         (,elsa-lambda-calculus-variables-regexp . font-lock-variable-name-face)
         (,elsa-lambda-calculus-constants-regexp . font-lock-constant-face)
