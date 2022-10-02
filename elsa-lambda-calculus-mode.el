@@ -49,13 +49,12 @@
   "Major Mode for the tiny lambda calculus evaluator."
 
   (setq font-lock-defaults '((elsa-lambda-calculus-font-lock-keywords))))
-
-(provide 'elsa-lambda-calculus-mode)
-(provide 'elsa-lambda-calculus-mode)
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.lc\\'" . elsa-lambda-calculus-mode))
+
+(provide 'elsa-lambda-calculus-mode)
 ;; Local Variables:
 ;; coding: utf-8
-;; End
+;; End:
 
 ;;; elsa-lambda-calculus-mode.el ends here

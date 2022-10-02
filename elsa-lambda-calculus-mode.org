@@ -74,21 +74,22 @@ This major-mode implements syntax highlighting for [[https://github.com/ucsd-pro
 
   (setq font-lock-defaults '((elsa-lambda-calculus-font-lock-keywords))))
 
-(provide 'elsa-lambda-calculus-mode)
 #+end_src
 
 *** Auto-load Major Mode for .lc Files
 #+begin_src emacs-lisp
-(provide 'elsa-lambda-calculus-mode)
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.lc\\'" . elsa-lambda-calculus-mode))
+
+(provide 'elsa-lambda-calculus-mode)
 #+end_src
 
 ** Footer
 #+begin_src emacs-lisp
+
 ;; Local Variables:
 ;; coding: utf-8
-;; End
+;; End:
 
 ;;; elsa-lambda-calculus-mode.el ends here
 #+end_src
