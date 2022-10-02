@@ -45,13 +45,10 @@ This major-mode implements syntax highlighting for [[https://github.com/ucsd-pro
 #+end_src
 *** Regular Expressions
 #+begin_src emacs-lisp
-(defconst elsa-lambda-calculus-keywords  '("let" "eval" ":" "\\"))
-(defconst elsa-lambda-calculus-operators '("\=" "-\>"))
-
-(defconst elsa-lambda-calculus-keywords-regexp  (regexp-opt elsa-lambda-calculus-keywords))
+(defconst elsa-lambda-calculus-keywords-regexp  (regexp-opt '("let" "eval" ":" "\\")))
 (defconst elsa-lambda-calculus-comments-regexp  "--.*$")
 (defconst elsa-lambda-calculus-step-regexp "=[abd*~]\>")
-(defconst elsa-lambda-calculus-operators-regexp (regexp-opt elsa-lambda-calculus-operators))
+(defconst elsa-lambda-calculus-operators-regexp (regexp-opt '("\=" "-\>")))
 (defconst elsa-lambda-calculus-variables-regexp "[a-z]+?[0-9]*?_?[a-z]?[0-9]*")
 (defconst elsa-lambda-calculus-constants-regexp "[A-Z0-9]+")
 
